@@ -9,7 +9,7 @@
 <?php include 'head.php' ?>
 <?php include 'sidebar.php'?> 
 <?php include __DIR__ ."/db.php"?> 
-<body  class="bg-black"  >
+<body  class="bg-[#FFF7EB]"  >
     <?php
     if (isset($_POST["submit"])){
         $name =$_POST["name"];
@@ -21,13 +21,13 @@
         $eng =$_POST["english"];
 
         $querya = "INSERT INTO reasult ( name,roll,class,maths,english,hindi,science) VALUES ('$name', '$roll', '$class', '$maths', '$eng', '$hindi', '$science')";
-        mysqli_query($connect, $querya);
-        echo"sucess";
+            mysqli_query($connect, $querya);
+            echo "<script>alert('Data inserted successfully');</script>";
     }
     
     ?>
      <div class="flex justify-center items-center min-h-screen mt-[-150px] ">
-     <form action="result.php" method="post" class="flex  flex-col border border-white text-white    border-[3px] rounded-3xl    p-4 ml-4 gap-2    ">
+     <form action="result.php" method="post" class="flex  flex-col border border-black     border-[3px] rounded-3xl    p-4 ml-4 gap-2    ">
         <label for=""> Name</label>
         <input type="text" name="name" placeholder="Enter Name" class="border  border-black rounded border-[1px]" >
         <div class="flex flex-col-2 gap-3 mb-4">
@@ -52,7 +52,7 @@
         <input type="text" name="hindi" class="border  border-black rounded border-[1px]" placeholder="Enter Name">
         <label for="">Science</label>
         <input type="text" name="science" class="border  border-black rounded border-[1px]" placeholder="Enter Name">
-        <input type="submit" name="submit"  class="bg-blue-500 w-[150px] text-white py-2 px-4 rounded capitalize" value="save">
+        <input type="submit" name="submit"  class="bg-blue-500 w-[150px] text-white py-2 px-4 rounded  self-center mt-4" value="Save">
     </form>
     </div>
         

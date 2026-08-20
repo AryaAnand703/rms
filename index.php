@@ -10,9 +10,12 @@
     <?php include 'head.php' ?>
     <?php include 'sidebar.php'?>
 
-<body > 
+<body  class="bg-[#FFF7EB]"> 
      <div class="flex justify-center items-center min-h-screen mt-[-400px]">
-        <h1 class="text-2xl font-bold  ">Learn <br>syntax</h1>
+        <h1 class="text-4xl font-bold  ">Learn <br>syntax</h1>
+     </div>
+     <div class="mt-[-300px]"> 
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae dolor possimus earum reprehenderit, deleniti architecto error dolorum consequatur, impedit nam blanditiis voluptas ducimus alias ut perspiciatis laudantium cupiditate, ad fugiat.</p>
      </div>
 
 </body>
