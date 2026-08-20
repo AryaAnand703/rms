@@ -7,7 +7,7 @@
     <title>Result Management System</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body > 
+<body class="bg-[#FFF7EB]"> 
     <?php include 'head.php' ?>
     <?php include 'sidebar.php'?>
     <div class=" flex justify-center items-center min-h-screen  mt-[-300px]">
