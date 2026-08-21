@@ -19,11 +19,31 @@
         $science =$_POST["science"];
         $hindi =$_POST["hindi"];
         $eng =$_POST["english"];
-
-        $querya = "INSERT INTO reasult ( name,roll,class,maths,english,hindi,science) VALUES ('$name', '$roll', '$class', '$maths', '$eng', '$hindi', '$science')";
+        $total = $maths+$eng+$science+$hindi;
+        if ($total >= 350) {
+            $grade = "A+";
+        } elseif ($total >= 300) {
+            $grade = "A";
+        } elseif ($total >= 250) {
+            $grade = "B+";
+        } elseif ($total >= 200) {
+            $grade = "B";
+        } elseif ($total >= 150) {
+            $grade = "C+";
+        } else {
+            $grade = "C";
+        }
+        $querya = "INSERT INTO reasult ( name,roll,class,maths,english,hindi,science,gread) VALUES ('$name', '$roll', '$class', '$maths', '$eng', '$hindi', '$science' ,'$grade')";
             mysqli_query($connect, $querya);
-            echo "<script>alert('Data inserted successfully');</script>";
-    }
+        if (mysqli_query($connect, $querya)) {
+
+            echo "<script>
+                alert('Data inserted successfully');
+                window.location.href = 'result.php';
+            </script>";
+        exit;
+        }
+        }
     
     ?>
      <div class="flex justify-center items-center min-h-screen mt-[-150px] ">
@@ -31,9 +51,21 @@
         <label for=""> Name</label>
         <input type="text" name="name" placeholder="Enter Name" class="border  border-black rounded border-[1px]" >
         <div class="flex flex-col-2 gap-3 mb-4">
-            <div class="flex flex-col">
+            <div class="flex flex-col w-[200px]">
                 <label for="">Class</label>
-                <input type="text" class="border border-black rounded" name="class" placeholder="Enter Class">
+                <select class="border border-gray-300 rounded-lg  py-1  W-[200px] focus:outline-none focus:ring-2 " name="class">
+                    <optgroup label="B.tech">
+                        <option value="CSE">CSE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="CIVIL">CIVIL</option>
+                        <option value="ME">ME</option>
+                    </optgroup>
+                    <optgroup label="BBA/BCA">
+                        <option value="BBA">BBA</option>
+                        <option value="BCA">BCA</option>
+                    </optgroup>
+                </select>    
             </div>
             <div class="flex flex-col">
                 <label for=""> Roll No</label>
