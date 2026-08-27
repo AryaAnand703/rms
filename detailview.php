@@ -1,11 +1,12 @@
 <?php include 'data/db.php'?> 
+<?php include 'store/link.php' ?>   
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>result view</title>
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
     <?php include 'store/head.php' ?>
     <?php include 'store/sidebar.php'?>

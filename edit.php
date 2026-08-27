@@ -1,14 +1,15 @@
+<?php include 'store/link.php' ?> 
+<?php include 'store/head.php' ?>
+<?php include 'store/sidebar.php'?>  
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Result</title>
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-     <?php include 'store/head.php' ?>
-    <?php include 'store/sidebar.php'?>
      <div class="flex justify-center  items-center  mt-[-150px] "> 
      <form action="edit.php" method="post" class="flex  flex-col border border-black border-[3px] rounded-3xl p-4 ml-4 gap-2 ">
       <div><h2 class="text-center">Edit Result</h2></div>
