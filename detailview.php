@@ -1,56 +1,28 @@
+<?php include __DIR__ ."/db.php"?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result</title>
+    <title>View detail</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<?php include 'head.php' ?>
-<?php include 'sidebar.php'?> 
-<?php include __DIR__ ."/db.php"?> 
-<body  class="bg-[#FFF7EB]"  >
-    <?php
-    if (isset($_POST["submit"])){
-        $name =$_POST["name"];
-        $class =$_POST["class"];
-        $roll =$_POST["roll"];
-        $maths =$_POST["maths"];
-        $science =$_POST["science"];
-        $hindi =$_POST["hindi"];
-        $eng =$_POST["english"];
-        $total = $maths+$eng+$science+$hindi;
-        if ($total >= 350) {
-            $grade = "A+";
-        } elseif ($total >= 300) {
-            $grade = "A";
-        } elseif ($total >= 250) {
-            $grade = "B+";
-        } elseif ($total >= 200) {
-            $grade = "B";
-        } elseif ($total >= 150) {
-            $grade = "C+";
-        } else {
-            $grade = "C";
-        }
-        $querya = "INSERT INTO reasult ( name,roll,class,maths,english,hindi,science,gread) VALUES ('$name', '$roll', '$class', '$maths', '$eng', '$hindi', '$science' ,'$grade')";
-            mysqli_query($connect, $querya);
-        if (mysqli_query($connect, $querya)) {
 
-            echo "<script>
-                alert('Data inserted successfully');
-                window.location.href = 'result.php';
-            </script>";
-        exit;
-        }
-        }
-    
-    ?>
-     <div class="flex justify-center  items-center  mt-[-150px] "> 
-     <form action="result.php" method="post" class="flex  flex-col border border-black     border-[3px] rounded-3xl    p-4 ml-4 gap-2    ">
-      
-        <h4 class="text-center bg-gray-200 p-2">student detail</h4>
-     <label for=""> Name</label>
+</head>
+<body>
+     <?php include 'head.php' ?>
+    <?php include 'sidebar.php'?>
+    <div class="">
+        <div>
+            <h2 class="text-center ">Vidya Vihar Institute of Technology</h2>
+            <h4 class="text-center">Affiliated To BEU </h4>
+            <h4 class="text-center">Phone: 1234567890 / Address: 123 Main Street</h4>
+            <h4 class="text-center">Email: info@vidyavihar.edu.in</h4>
+        </div>
+    <form action="edit.php" method="post" class="flex  flex-col border border-black border-[3px] rounded-3xl p-4 ml-4 gap-2 ">
+        
+        
+        
+        <label for=""> Name</label>
         <input type="text" name="name" placeholder="Enter Name" class="border  border-black rounded border-[1px]" >
         <div class="flex flex-col-2 gap-3 mb-4">
             <div class="flex flex-col w-[200px]">
@@ -89,7 +61,6 @@
         <input type="submit" name="submit"  class="bg-blue-500 w-[150px] text-white py-2 px-4 rounded  self-center mt-4" value="Save">
     </form>
     </div>
-        
+    
 </body>
-
 </html>

@@ -12,7 +12,7 @@
     <?php include 'sidebar.php'?>
     <h1 class="font-bold text-2xl mb-4 flex justify-center items-center mt-[-150px]"> view Result</h1>
     <div class=" flex justify-center items-center">
-    <table class="border border-black  w-[800px]">
+    <table class="border border-black   w-[900px]">
             <tr class="border border-black border-[2px]">
                 <th class="border border-black ">Id</th>
                 <th class="border border-black border-[2px]">Name</th>
@@ -21,6 +21,7 @@
                 <th class="border border-black border-[2px]">Total</th>
                 <th class="border border-black border-[2px]">Grade</th>
                 <th class="border border-black border-[2px]">Action</th>
+                <th class="border border-black border-[2px] ">View</th>
             </tr>
             <?php
             $query = mysqli_query($connect,"SELECT * FROM reasult");
@@ -59,6 +60,9 @@
                     <td class="border border-black border-[2px] align-center w-[80px]  ">
                         <a href="edit.php?id=<?php echo $row['id']?>" target="_blank" class="text-blue-500 hover:text-blue-700">Edit</a>
                         <a href="delete.php?id=<?php echo $row['id']?>" class="text-red-500 hover:text-red-700 ml-2">Delete</a>
+                    </td>
+                    <td class="border border-black border-[2px] align-center w-[80px]  ">
+                        <a href="detailview.php?id=<?php echo $row['id']?>" target="_blank" class="text-blue-500 hover:text-blue-700  flex items-center justify-center">View</a>
                     </td>
             </tr>
             <?php
