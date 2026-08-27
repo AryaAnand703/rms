@@ -1,3 +1,4 @@
+<?php include 'data/db.php'?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,8 @@
     <title>Result</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<?php include 'head.php' ?>
-<?php include 'sidebar.php'?> 
-<?php include __DIR__ ."/db.php"?> 
+<?php include 'store/head.php' ?>
+<?php include 'store/sidebar.php'?> 
 <body  class="bg-[#FFF7EB]"  >
     <?php
     if (isset($_POST["submit"])){

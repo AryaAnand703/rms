@@ -1,4 +1,4 @@
-<?php include __DIR__ ."/db.php"?> 
+<?php include 'data/db.php'?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#FFF7EB]"> 
-    <?php include 'head.php' ?>
-    <?php include 'sidebar.php'?>
+    <?php include 'store/head.php' ?>
+    <?php include 'store/sidebar.php'?>
     <h1 class="font-bold text-2xl mb-4 flex justify-center items-center mt-[-150px]"> view Result</h1>
     <div class=" flex justify-center items-center">
     <table class="border border-black   w-[900px]">
