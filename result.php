@@ -48,9 +48,8 @@
     
     ?>
      <div class="flex justify-center  items-center  mt-[-150px] "> 
-     <form action="result.php" method="post" class="flex  flex-col border border-black     border-[3px] rounded-3xl    p-4 ml-4 gap-2    ">
-      
-        <h4 class="text-center bg-gray-200 p-2">student detail</h4>
+     <form action="result.php" method="post" class="flex  flex-col border border-black border-[3px] rounded-3xl p-4 ml-4 gap-2 ">
+        <h4 class="text-center font-bold text-xl bg-gray-200 p-2"> Insert Student Detail</h4>
      <label for=""> Name</label>
         <input type="text" name="name" placeholder="Enter Name" class="border  border-black rounded border-[1px]" >
         <div class="flex flex-col-2 gap-3 mb-4">
