@@ -10,13 +10,14 @@
 <body class="bg-[#FFF7EB]"> 
     <?php include 'head.php' ?>
     <?php include 'sidebar.php'?>
-    <div class=" flex justify-center items-center min-h-screen  mt-[-300px]">
-    <table class="border border-black border-[2px] w-[800px]">
+    <h1 class="font-bold text-2xl mb-4 flex justify-center items-center mt-[-150px]"> view Result</h1>
+    <div class=" flex justify-center items-center">
+    <table class="border border-black  w-[800px]">
             <tr class="border border-black border-[2px]">
-                <th class="border border-black border-[2px]">Id</th>
+                <th class="border border-black ">Id</th>
                 <th class="border border-black border-[2px]">Name</th>
                 <th class="border border-black border-[2px]">Class</th>
-                <th class="border border-black border-[2px] ">Roll No</th>
+                <th class="border border-black border-[2px]">Roll No</th>
                 <th class="border border-black border-[2px]">Total</th>
                 <th class="border border-black border-[2px]">Grade</th>
                 <th class="border border-black border-[2px]">Action</th>
@@ -34,13 +35,13 @@
                 $science = $row['science'];
                 $total = $maths+$english+$science+$hindi;
             ?>
-            <tr class="border border-black border-[2px] ">
+            <tr class="border border-black border-[2px]">
                 <td class="border border-black border-[2px] w-[80px]  "><?php echo $id?></td>
                 <td class="border border-black border-[2px] w-[80px]  "><?php echo $name?></td>
                 <td class="border border-black border-[2px] w-[80px]  "><?php echo $class?></td>
                 <td class="border border-black border-[2px] w-[80px]  "><?php echo $roll?></td>
                 <td class="border border-black border-[2px] w-[80px]  "><?php echo $total?></td>
-                <td class="border border-black border-[2px] w-[80px]  "><?php 
+                <td class="border border-black border-[2px] w-[80px]   "><?php 
                 if ($total >= 350) {
                     echo "A+";
                 } elseif ($total >= 300) {
@@ -55,7 +56,7 @@
                     echo "C";
                 }
                 ?></td>
-                    <td class="border border-black border-[2px]">
+                    <td class="border border-black border-[2px] align-center w-[80px]  ">
                         <a href="edit.php?id=<?php echo $row['id']?>" target="_blank" class="text-blue-500 hover:text-blue-700">Edit</a>
                         <a href="delete.php?id=<?php echo $row['id']?>" class="text-red-500 hover:text-red-700 ml-2">Delete</a>
                     </td>

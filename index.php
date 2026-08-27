@@ -14,7 +14,7 @@
      <div class="flex justify-center items-center min-h-screen mt-[-400px]">
         <h1 class="text-4xl font-bold  ">Learn <br>syntax</h1>
      </div>
-     <div class="mt-[-300px] flex  items-center gap-5"> 
+     <!-- <div class="mt-[-300px] flex  items-center gap-5"> 
         <label for="">please select a class</label>
         <select class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
             <optgroup label="B.tech">
@@ -25,7 +25,7 @@
                 <option value="me">ME</option>
             </optgroup>
         </select>
-     </div>
+     </div> -->
 
 </body>
 </html>
