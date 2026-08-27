@@ -7,9 +7,10 @@
     <title>result view</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#FFF7EB]" >
-    <?php include 'head.php' ?>
+<?php include 'head.php' ?>
     <?php include 'sidebar.php'?>
+<body class="bg-[#FFF7EB] " >
+    
     <?php 
     if(isset($_GET['id'])){
         $id = $_GET['id'];
@@ -17,7 +18,7 @@
         $row = mysqli_fetch_array($query);
     }
     ?>
-        <div class="mb-3">
+        <div class="mb-3 mt-[-130px] ">
             <h2 class="text-center font-bold text-4xl text-gray-800  ">Vidya Vihar Institute of Technology</h2>
             <h4 class="text-center">Affiliated To BEU </h4>
             <h4 class="text-center">Phone: 1234567890 / Email: info@vidyavihar.edu.in</h4>

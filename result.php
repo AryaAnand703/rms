@@ -57,11 +57,11 @@
                 <label for="">Class</label>
                 <select class="border border-gray-300 rounded-lg  py-1  W-[200px] focus:outline-none focus:ring-2 " name="class">
                     <optgroup label="B.tech">
-                        <option value="CSE">CSE</option>
-                        <option value="EEE">EEE</option>
-                        <option value="ECE">ECE</option>
-                        <option value="CIVIL">CIVIL</option>
-                        <option value="ME">ME</option>
+                        <option value="B.Tech/CSE">CSE</option>
+                        <option value="B.Tech/EEE">EEE</option>
+                        <option value="B.Tech/ECE">ECE</option>
+                        <option value="B.Tech/CIVIL">CIVIL</option>
+                        <option value="B.Tech/ME">ME</option>
                     </optgroup>
                     <optgroup label="BBA/BCA">
                         <option value="BBA">BBA</option>
