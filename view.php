@@ -59,7 +59,7 @@
                 ?></td>
                     <td class="border border-black border-[2px] align-center w-[80px]  ">
                         <a href="edit.php?id=<?php echo $row['id']?>" target="_blank" class="text-blue-500 hover:text-blue-700">Edit</a>
-                        <a href="delete.php?id=<?php echo $row['id']?>" class="text-red-500 hover:text-red-700 ml-2">Delete</a>
+                        <a href="?id=<?php echo $row['id']?>" class="text-red-500 hover:text-red-700 ml-2">Delete</a>
                     </td>
                     <td class="border border-black border-[2px] align-center w-[80px]  ">
                         <a href="detailview.php?id=<?php echo $row['id']?>" target="_blank" class="text-blue-500 hover:text-blue-700  flex items-center justify-center">View</a>
@@ -68,7 +68,17 @@
             <?php
             }
             ?>
-    </div>
+        </tbody>
+    </table>
+</div>
+
+    <?php
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            $query = "DELETE FROM reasult WHERE id = '$id'";
+            mysqli_query($connect, $query);
+        }
+    ?>
 
 
 </body>
