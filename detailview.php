@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View detail</title>
+    <title><?php echo $row['name']; ?></title>
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
@@ -18,9 +18,9 @@
         $row = mysqli_fetch_array($query);
     }
     ?>
-    <div >
+    
         <div class="mb-3">
-            <h2 class="text-center font-bold text-2xl text-gray-800  ">Vidya Vihar Institute of Technology</h2>
+            <h2 class="text-center font-bold text-4xl text-gray-800  ">Vidya Vihar Institute of Technology</h2>
             <h4 class="text-center">Affiliated To BEU </h4>
             <h4 class="text-center">Phone: 1234567890 / Email: info@vidyavihar.edu.in</h4>
             <h4 class="text-center"> visiy :www.vvit.org</h4>
@@ -30,21 +30,22 @@
             <h4 class="text-center  text-lg text-gray-800  ">Acadmic Session: 2023-2024</h4>
             <h4 class="text-center font-bold text-lg text-gray-800 ">Student Class: <?php echo $row['class']; ?></h4>
         </div>
-        <div class=" flex justify-between">
+        <div class=" flex justify-center  m-4 p-4  w-full">
+            <div class="">
+                <div class=" flex justify-between ">
             <div class="">
                 <h3>Student Name: <?php echo $row['name']; ?></h3>
                 <h3>Mother's Name: <?php echo $row['mother']; ?></h3>
                 <h3>Father's Name: <?php echo $row['father']; ?></h3>
-                <h3>Address: <?php echo $row['Address']; ?></h3>
+                <h3>Address: <?php echo $row['address']; ?></h3>
                 
             </div>
             <div class="">
                 <h3>Student Roll No: <?php echo $row['roll']; ?></h3>
                 <h3>Addmission No: <?php echo $row['id']; ?></h3>
-                <h3>D.O.B: <?php echo $row['D.O.B']; ?></h3>
+                <h3>D.O.B: <?php echo $row['dateofbirth']; ?></h3>
             </div>
         </div>
-    </div>
     <table class="border border-1px border-black">
         <tr >
             <th class="border border-1px border-black">subject</th>
@@ -82,7 +83,9 @@
             <td colspan="3" class="text-center font-bold border border-1px border-black">Total</td>
             <td><?php echo $row['maths'] + $row['science'] + $row['english'] + $row['hindi']; ?></td>
             <td></td>
-    </table>
+    </table> 
+        </div>
+        </div>
     
 </body>
 </html>
