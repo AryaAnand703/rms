@@ -50,11 +50,19 @@
      <div class="flex justify-center  items-center  mt-[-150px] "> 
      <form action="result.php" method="post" class="flex  flex-col border border-black border-[3px] rounded-3xl p-4 ml-4 gap-2 ">
         <h4 class="text-center font-bold text-xl bg-gray-200 p-2"> Insert Student Detail</h4>
-     <label for=""> Name</label>
-        <input type="text" name="name" placeholder="Enter Name" class="border  border-black rounded border-[1px]" >
+        <div class="flex flex-col-2 gap-3 mb-4">
+            <div class=" flex flex-col w-[200px]">
+                <label for="">Student Full Name</label>
+                <input type="text" name="name" placeholder="Enter Name" class="border  border-black rounded border-[1px]" >
+            </div>
+            <div class="flex flex-col">
+                <label for=""> Roll No</label>
+                <input type="number" name="roll" class="border  border-black rounded border-[1px]" placeholder="Enter Roll No">
+            </div>
+        </div>
         <div class="flex flex-col-2 gap-3 mb-4">
             <div class="flex flex-col w-[200px]">
-                <label for="">Class</label>
+                <label for="">Class/branch</label>
                 <select class="border border-gray-300 rounded-lg  py-1  W-[200px] focus:outline-none focus:ring-2 " name="class">
                     <optgroup label="B.tech">
                         <option value="B.Tech/CSE">CSE</option>
@@ -69,9 +77,18 @@
                     </optgroup>
                 </select>    
             </div>
-            <div class="flex flex-col">
-                <label for=""> Roll No</label>
-                <input type="number" name="roll" class="border  border-black rounded border-[1px]" placeholder="Enter Roll No">
+            <div class="flex flex-col w-[200px]">
+                <label for="">Semester/Term</label>
+                <select class="border border-gray-300 rounded-lg  py-1  W-[200px] focus:outline-none focus:ring-2 " name="class">
+                        <option value="BBA">1st Sem</option>
+                        <option value="BCA">2nd Sem</option>
+                        <option value="BCA">3rd Sem</option>
+                        <option value="BCA">4th Sem</option>
+                        <option value="BCA">5th Sem</option>
+                        <option value="BCA">6th Sem</option>
+                        <option value="BCA">7th Sem</option>
+                        <option value="BCA">8th Sem</option>
+                </select>    
             </div>
         </div>
         <hr class="border-black border-[2px]">
