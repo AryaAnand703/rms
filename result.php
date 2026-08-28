@@ -38,8 +38,8 @@
         } else {
             $grade = "C";
         }
-        $querya = "INSERT INTO reasult ( name,roll,class,father,mother,dateofbirth,address,maths,english,hindi,science,gread) VALUES ('$name', '$roll', '$class', '$father', '$mother', '$birth', '$address', '$maths', '$eng', '$hindi', '$science' ,'$grade')";
-            mysqli_query($connect, $querya);
+        $querya = "INSERT INTO reasult ( name,roll,class,father,mother,birth,address,maths,english,hindi,science,gread) VALUES ('$name', '$roll', '$class', '$father', '$mother', '$birth', '$address', '$maths', '$eng', '$hindi', '$science' ,'$grade')";
+            // mysqli_query($connect, $querya);
         if (mysqli_query($connect, $querya)) {
 
             echo "<script>
@@ -110,7 +110,7 @@
          <div class="flex flex-col-2 gap-3 mb-4">
             <div class=" flex flex-col w-[200px]">
                 <label for="">date of birth</label>
-                <input type="date" name="birth" placeholder="Enter Name" class="border  border-black rounded border-[1px]" >
+                <input type="date" name="dateofbirth" placeholder="Enter Name" class="border  border-black rounded border-[1px]" >
             </div>
             <div class="flex flex-col">
                 <label for=""> address</label>
