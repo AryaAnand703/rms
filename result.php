@@ -16,6 +16,10 @@
         $name =$_POST["name"];
         $class =$_POST["class"];
         $roll =$_POST["roll"];
+        $father =$_POST["father"];
+        $mother =$_POST["mother"];
+        $birth =$_POST["birth"];
+        $address =$_POST["address"];
         $maths =$_POST["maths"];
         $science =$_POST["science"];
         $hindi =$_POST["hindi"];
@@ -34,7 +38,7 @@
         } else {
             $grade = "C";
         }
-        $querya = "INSERT INTO reasult ( name,roll,class,maths,english,hindi,science,gread) VALUES ('$name', '$roll', '$class', '$maths', '$eng', '$hindi', '$science' ,'$grade')";
+        $querya = "INSERT INTO reasult ( name,roll,class,father,mother,dateofbirth,address,maths,english,hindi,science,gread) VALUES ('$name', '$roll', '$class', '$father', '$mother', '$birth', '$address', '$maths', '$eng', '$hindi', '$science' ,'$grade')";
             mysqli_query($connect, $querya);
         if (mysqli_query($connect, $querya)) {
 
@@ -49,20 +53,22 @@
     ?>
      <div class="flex justify-center  items-center  mt-[-150px] "> 
      <form action="result.php" method="post" class="flex  flex-col border border-black border-[3px] rounded-3xl p-4 ml-4 gap-2 ">
-        <h4 class="text-center font-bold text-xl bg-gray-200 p-2"> Insert Student Detail</h4>
+        <h4 class=" font-bold text-l  p-2 flex gap-1"><svg class="text-blue-500" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-fill" viewBox="0 0 16 16">
+  <path d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2m5.5 1.5v2a1 1 0 0 0 1 1h2z"/>
+</svg> Insert Student Detail</h4>
         <div class="flex flex-col-2 gap-3 mb-4">
             <div class=" flex flex-col w-[200px]">
-                <label for="">Student Full Name</label>
+                <label for="">Student Full Name*</label>
                 <input type="text" name="name" placeholder="Enter Name" class="border  border-black rounded border-[1px]" >
             </div>
             <div class="flex flex-col">
-                <label for=""> Roll No</label>
+                <label for=""> Roll No*</label>
                 <input type="number" name="roll" class="border  border-black rounded border-[1px]" placeholder="Enter Roll No">
             </div>
         </div>
         <div class="flex flex-col-2 gap-3 mb-4">
             <div class="flex flex-col w-[200px]">
-                <label for="">Class/branch</label>
+                <label for="">Class/branch*</label>
                 <select class="border border-gray-300 rounded-lg  py-1  W-[200px] focus:outline-none focus:ring-2 " name="class">
                     <optgroup label="B.tech">
                         <option value="B.Tech/CSE">CSE</option>
@@ -78,7 +84,7 @@
                 </select>    
             </div>
             <div class="flex flex-col w-[200px]">
-                <label for="">Semester/Term</label>
+                <label for="">Semester/Term*</label>
                 <select class="border border-gray-300 rounded-lg  py-1  W-[200px] focus:outline-none focus:ring-2 " name="class">
                         <option value="BBA">1st Sem</option>
                         <option value="BCA">2nd Sem</option>
@@ -91,8 +97,28 @@
                 </select>    
             </div>
         </div>
+        <div class="flex flex-col-2 gap-3 mb-4">
+            <div class=" flex flex-col w-[200px]">
+                <label for="">Mother Name*</label>
+                <input type="text" name="mother" placeholder="Enter Name" class="border  border-black rounded border-[1px]" >
+            </div>
+            <div class="flex flex-col">
+                <label for=""> Father Name*</label>
+                <input type="text" name="father" class="border  border-black rounded border-[1px]" placeholder="Enter Roll No">
+            </div>
+        </div>
+         <div class="flex flex-col-2 gap-3 mb-4">
+            <div class=" flex flex-col w-[200px]">
+                <label for="">date of birth</label>
+                <input type="date" name="birth" placeholder="Enter Name" class="border  border-black rounded border-[1px]" >
+            </div>
+            <div class="flex flex-col">
+                <label for=""> address</label>
+                <input type="text" name="address" class="border  border-black rounded border-[1px]" placeholder="Enter Roll No">
+            </div>
+        </div>
         <hr class="border-black border-[2px]">
-        <h4 class="text-center bg-gray-200 p-2">subject detail</h4>
+        <h4 class="text-center bg-gray-200 p-2 font-bold text-xl"> Subject Marks (Max 100 Marks Each)</h4>
         <hr class="border-black border-[2px]">
 
         <label for="">Maths</label>
