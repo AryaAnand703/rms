@@ -18,7 +18,7 @@
         $roll =$_POST["roll"];
         $father =$_POST["father"];
         $mother =$_POST["mother"];
-        $birth =$_POST["birth"];
+        
         $address =$_POST["address"];
         $maths =$_POST["maths"];
         $science =$_POST["science"];
@@ -38,14 +38,9 @@
         } else {
             $grade = "C";
         }
-        $querya = "INSERT INTO reasult ( name,roll,class,father,mother,birth,address,maths,english,hindi,science,gread) VALUES ('$name', '$roll', '$class', '$father', '$mother', '$birth', '$address', '$maths', '$eng', '$hindi', '$science' ,'$grade')";
+        $querya = "INSERT INTO reasult ( name,roll,class,father,mother,address,maths,english,hindi,science,gread) VALUES ('$name', '$roll', '$class', '$father', '$mother', '$address', '$maths', '$eng', '$hindi', '$science' ,'$grade')";
             // mysqli_query($connect, $querya);
         if (mysqli_query($connect, $querya)) {
-
-            echo "<script>
-                alert('Data inserted successfully');
-                window.location.href = 'result.php';
-            </script>";
         exit;
         }
         }
