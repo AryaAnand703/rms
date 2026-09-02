@@ -1,57 +1,94 @@
-<?php include 'store/link.php' ?> 
-<?php include 'store/head.php' ?>
-<?php include 'store/sidebar.php'?>  
+<?php include 'data/db.php'?> 
+<?php include 'store/link.php' ?>   
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Result</title>
+    <title>result view</title>
 </head>
-<body>
-     <div class="flex justify-center  items-center  mt-[-150px] "> 
-     <form action="edit.php" method="post" class="flex  flex-col border border-black border-[3px] rounded-3xl p-4 ml-4 gap-2 ">
-      <div><h2 class="text-center">Edit Result</h2></div>
-        
-     <label for=""> Name</label>
-        <input type="text" name="name" placeholder="Enter Name" class="border  border-black rounded border-[1px]" >
-        <div class="flex flex-col-2 gap-3 mb-4">
-            <div class="flex flex-col w-[200px]">
-                <label for="">Class</label>
-                <select class="border border-gray-300 rounded-lg  py-1  W-[200px] focus:outline-none focus:ring-2 " name="class">
-                    <optgroup label="B.tech">
-                        <option value="CSE">CSE</option>
-                        <option value="EEE">EEE</option>
-                        <option value="ECE">ECE</option>
-                        <option value="CIVIL">CIVIL</option>
-                        <option value="ME">ME</option>
-                    </optgroup>
-                    <optgroup label="BBA/BCA">
-                        <option value="BBA">BBA</option>
-                        <option value="BCA">BCA</option>
-                    </optgroup>
-                </select>    
-            </div>
-            <div class="flex flex-col">
-                <label for=""> Roll No</label>
-                <input type="number" name="roll" class="border  border-black rounded border-[1px]" placeholder="Enter Roll No">
+    <?php include 'store/head.php' ?>
+    <?php include 'store/sidebar.php'?>
+<body class="bg-[#FFF7EB] " >
+    
+    <?php 
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        $query = mysqli_query($connect,"SELECT * FROM reasult WHERE id = '$id'");
+        $row = mysqli_fetch_array($query);
+    }
+    ?>
+        <div class="mb-3 mt-[-130px] ">
+            <h2 class="text-center font-bold text-4xl text-gray-800  ">Vidya Vihar Institute of Technology</h2>
+            <h4 class="text-center">Affiliated To BEU </h4>
+            <h4 class="text-center">Phone: 1234567890 / Email: info@vidyavihar.edu.in</h4>
+            <h4 class="text-center"> visiy :www.vvit.org</h4>
+        </div>
+        <div class="">
+            <h3 class="text-center  text-lg text-gray-800  ">Academic Report</h3>
+            <h4 class="text-center  text-lg text-gray-800  ">Acadmic Session: 2023-2024</h4>
+            <h4 class="text-center font-bold text-lg text-gray-800 ">Student Class: <?php echo $row['class']; ?></h4>
+        </div>
+        <div class=" flex justify-center  m-4 p-4  ">
+            <div class=" ">
+                <div class=" flex justify-between ">
+                    <div class="">
+                        <h3>Student Name: <?php echo $row['name']; ?></h3>
+                        <h3>Mother's Name: <?php echo $row['mother']; ?></h3>
+                        <h3>Father's Name: <?php echo $row['father']; ?></h3>
+                        <h3>Address: <?php echo $row['address']; ?></h3>
+                    </div>
+                    <div class="">
+                        <h3>Student Roll No: <?php echo $row['roll']; ?></h3>
+                        <h3>Addmission No: <?php echo $row['id']; ?></h3>
+                        <h3>D.O.B: <?php echo $row['birth']; ?></h3>
+                    </div>
+                </div>
+                <table class="border border-1px border-black">
+                    <tr >
+                        <th class="border border-1px border-black">subject</th>
+                        <th class="border border-1px border-black">min Marks</th>
+                        <th class="border border-1px border-black">Max Marks</th>
+                        <th class="border border-1px border-black">Marks Obtained</th>
+                        <th class="border border-1px border-black">Remark</th>
+                    </tr>
+                    
+                    <tr>
+                        <td class="border border-1px border-black">Maths</td>
+                        <td class="border border-1px border-black">35</td>
+                        <td class="border border-1px border-black">100</td>
+                        <td class="border border-1px border-black"><?php echo $row['maths']; ?></td>
+                        <td class="border border-1px border-black"><?php echo ($row['maths'] >= 35) ? 'Pass' : 'Fail'; ?></td>
+                    </tr><tr>
+                        <td class="border border-1px border-black">Science</td>
+                        <td class="border border-1px border-black">35</td>
+                        <td class="border border-1px border-black">100</td>
+                        <td class="border border-1px border-black"><?php echo $row['science']; ?></td>
+                        <td class="border border-1px border-black"><?php echo ($row['science'] >= 35) ? 'Pass' : 'Fail'; ?></td>
+                    </tr><tr>
+                        <td class="border border-1px border-black">English</td>
+                        <td class="border border-1px border-black">35</td>
+                        <td class="border border-1px border-black">100</td>
+                        <td class="border border-1px border-black"><?php echo $row['english']; ?></td>
+                        <td class="border border-1px border-black"><?php echo ($row['english'] >= 35) ? 'Pass' : 'Fail'; ?></td>
+                    </tr><tr>
+                        <td class="border border-1px border-black">Hindi</td>
+                        <td class="border border-1px border-black">35</td>
+                        <td class="border border-1px border-black">100</td>
+                        <td class="border border-1px border-black"><?php echo $row['hindi']; ?></td>
+                        <td class="border border-1px border-black"><?php echo ($row['hindi'] >= 35) ? 'Pass' : 'Fail'; ?></td>
+                    </tr>
+                    <tr>
+                        <?php $total=$row['maths'] + $row['science'] + $row['english'] + $row['hindi']; ?>
+                        <td colspan="1" class="text-center font-bold border border-1px border-black">Total</td>
+                        <td><?php echo $total; ?></td>
+                        <td colspan="1" class="text-center font-bold border border-1px border-black">Percentage</td>
+                        <td><?php echo ($total / 400) * 100 ;?></td>
+                    </tr>
+                </table> 
             </div>
         </div>
-        <hr class="border-black border-[2px]">
-        <h4 class="text-center bg-gray-200 p-2">subject detail</h4>
-        <hr class="border-black border-[2px]">
-
-        <label for="">Maths</label>
-        <input type="text" name="maths" class="border  border-black rounded border-[1px]"placeholder="Enter Name">
-        <label for="">English</label>
-        <input type="text" name="english" class="border  border-black rounded border-[1px]" placeholder="Enter Name">
-        <label for="">Hindi</label>
-        <input type="text" name="hindi" class="border  border-black rounded border-[1px]" placeholder="Enter Name">
-        <label for="">Science</label>
-        <input type="text" name="science" class="border  border-black rounded border-[1px]" placeholder="Enter Name">
-        <input type="submit" name="submit"  class="bg-blue-500 w-[150px] text-white py-2 px-4 rounded  self-center mt-4" value="Save">
-    </form>
-    </div>
+    
 </body>
 </html>

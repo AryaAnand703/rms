@@ -10,6 +10,7 @@
 </head>
     <?php include 'store/head.php' ?>
     <?php include 'store/sidebar.php'?>
+    <?php include 'store/sidebar2.php'?>
 <body class="bg-[#FFF7EB] " >
     
     <?php 
