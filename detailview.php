@@ -42,7 +42,7 @@
                     <div class="">
                         <h3>Student Roll No: <?php echo $row['roll']; ?></h3>
                         <h3>Addmission No: <?php echo $row['id']; ?></h3>
-                        <h3>D.O.B: <?php echo $row['dateofbirth']; ?></h3>
+                        <h3>D.O.B: <?php echo $row['birth']; ?></h3>
                     </div>
                 </div>
                 <table class="border border-1px border-black">
