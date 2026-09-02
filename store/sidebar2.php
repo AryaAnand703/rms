@@ -8,7 +8,7 @@ while ($row = mysqli_fetch_array($query)) {
     ?>
 
     <body>
-        </div class="flex justify-center items-center ">
+        </div class="flex justify-center items">
         <table>
             <td>
                 <a href="detailview.php?id=<?php echo $row['id'] ?>"
