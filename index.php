@@ -11,7 +11,7 @@
 <?php $pageTitle = "Public Result Portal"; ?>
     <?php include 'store/head.php' ?>
     <?php include 'store/sidebar.php'?>
-
+    <?php include 'store/sidebar2.php'?>
 <body  class="bg-[#FFF7EB]"> 
      <div class="flex justify-center items-center min-h-screen mt-[-400px]">
         <h1 class="text-4xl font-bold  ">Learn <br>syntax</h1>
