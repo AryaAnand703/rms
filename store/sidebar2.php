@@ -2,12 +2,12 @@
     <h3 class="font-bold text-lg mb-3 text-gray-800 border-b border-blue-300 pb-2">Student List</h3>
     <table class="w-full text-left">
         <thead>
-            <tr class=" text-sm font-semibold text-gray-700">
+            <tr class="border-b border-blue-300 text-sm font-semibold text-gray-700">
                 <th class="pb-1 px-1">Name</th>
                 <th class="pb-1 px-1 text-right">Roll</th>
             </tr>
         </thead>
-        <tbody ">
+        <tbody class="divide-y divide-blue-100">
             <?php
             $query = mysqli_query($connect, "SELECT * FROM reasult");
             if ($query) {

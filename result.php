@@ -13,7 +13,7 @@
 <?php include 'store/sidebar.php' ?>
 
 <body class="bg-[#FFF7EB]">
-    <?php
+        <?php
     if (isset($_POST["submit"])) {
         $name = $_POST["name"];
         $class = $_POST["class"];
